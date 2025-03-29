@@ -1,48 +1,69 @@
 version: 2
 
-models: union
-  - name: 
+models:
+  - name: union
     description: "This model combines data from hote_crime and major_crime based on EVENT_UNIQUE_ID, providing information on various crime incidents, including details from both tables."
     columns:
       - name: event_unique_id
         description: "Unique identifier for the crime event."
+        type: integer
       - name: occurrence_year
         description: "The year the crime occurred from the hote_crime table."
+        type: integer
       - name: occurrence_date
         description: "The exact date the crime occurred from the hote_crime table."
+        type: date
       - name: reported_year
         description: "The year the crime was reported from the hote_crime table."
+        type: integer
       - name: reported_date
         description: "The exact date the crime was reported from the hote_crime table."
+        type: date
       - name: hote_division
         description: "The division where the crime occurred from the hote_crime table."
+        type: string
       - name: hote_location_type
         description: "The type of location where the crime occurred from the hote_crime table."
+        type: string
       - name: primary_offence
         description: "The primary offense committed in the hote_crime table."
+        type: string
       - name: hote_hood_158
         description: "The neighborhood code for the location of the crime from the hote_crime table."
+        type: integer
       - name: hote_neighbourhood_158
         description: "The neighborhood name where the crime occurred from the hote_crime table."
+        type: string
       - name: report_date
         description: "The date the crime was reported from the major_crime table."
+        type: date
       - name: occ_date
         description: "The exact date the crime occurred from the major_crime table."
+        type: date
       - name: report_year
         description: "The year the crime was reported from the major_crime table."
+        type: integer
       - name: report_month
         description: "The month the crime was reported from the major_crime table."
+        type: string
       - name: report_day
         description: "The day of the month the crime was reported from the major_crime table."
+        type: integer
       - name: report_doy
         description: "The day of the year the crime was reported from the major_crime table."
+        type: integer
       - name: major_crime_division
         description: "The division where the major crime occurred."
+        type: string
       - name: major_crime_location_type
         description: "The type of location where the major crime occurred."
+        type: string
       - name: offence
         description: "The offense type for the major crime."
+        type: string
       - name: major_hood_158
         description: "The neighborhood code for the location of the major crime."
+        type: string
       - name: major_neighbourhood_158
         description: "The neighborhood name where the major crime occurred."
+        type: string
