@@ -11,7 +11,7 @@ sources:
            # error_after: {count: 6, period: hour}
 
 models:
-  - name: hote_crime
+  - name: hot_crime
     description: "This table contains data about crimes, including auto theft, with various attributes such as location, offense type, and bias information."
     columns:
       - name: _id
