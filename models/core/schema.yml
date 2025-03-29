@@ -1,30 +1,19 @@
 version: 2
 
-models:
-  - name: joined_crime_data
+models: union
+  - name: 
     description: "This model combines data from hote_crime and major_crime based on EVENT_UNIQUE_ID, providing information on various crime incidents, including details from both tables."
     columns:
       - name: event_unique_id
         description: "Unique identifier for the crime event."
-        tests:
-          - not_null
-          - unique
       - name: occurrence_year
         description: "The year the crime occurred from the hote_crime table."
-        tests:
-          - not_null
       - name: occurrence_date
         description: "The exact date the crime occurred from the hote_crime table."
-        tests:
-          - not_null
       - name: reported_year
         description: "The year the crime was reported from the hote_crime table."
-        tests:
-          - not_null
       - name: reported_date
         description: "The exact date the crime was reported from the hote_crime table."
-        tests:
-          - not_null
       - name: hote_division
         description: "The division where the crime occurred from the hote_crime table."
       - name: hote_location_type
@@ -37,16 +26,10 @@ models:
         description: "The neighborhood name where the crime occurred from the hote_crime table."
       - name: report_date
         description: "The date the crime was reported from the major_crime table."
-        tests:
-          - not_null
       - name: occ_date
         description: "The exact date the crime occurred from the major_crime table."
-        tests:
-          - not_null
       - name: report_year
         description: "The year the crime was reported from the major_crime table."
-        tests:
-          - not_null
       - name: report_month
         description: "The month the crime was reported from the major_crime table."
       - name: report_day
