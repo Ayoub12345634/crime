@@ -1,4 +1,14 @@
 version: 2
+sources:
+  - name: staging
+    database: "kestra-449718"
+    schema: "Project"
+      
+    tables:
+      - name: Hate_Crimes
+      - name: Major_Crime
+         # freshness:
+           # error_after: {count: 6, period: hour}
 
 models:
   - name: hote_crime
