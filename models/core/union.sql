@@ -13,7 +13,7 @@ WITH hote_crime AS (
         PRIMARY_OFFENCE,
         HOOD_158,
         NEIGHBOURHOOD_158
-    FROM {{ ref('hote_crime') }}  -- Referring to the hote_crime table in DBT
+    FROM {{ ref('Hate_Crimes') }}  -- Referring to the hote_crime table in DBT
 ),
 major_crime AS (
     SELECT
@@ -30,7 +30,7 @@ major_crime AS (
         OFFENCE,
         HOOD_158 AS MAJOR_HOOD_158,
         NEIGHBOURHOOD_158 AS MAJOR_NEIGHBOURHOOD_158
-    FROM {{ ref('major_crime') }}  -- Referring to the major_crime table in DBT
+    FROM {{ ref('Hate_Crimes') }}  -- Referring to the major_crime table in DBT
 )
 
 SELECT
@@ -39,9 +39,7 @@ SELECT
     h.OCCURRENCE_DATE,
     h.REPORTED_YEAR,
     h.REPORTED_DATE,
-    h.DIVISION AS HOTE_DIVISION,
     h.LOCATION_TYPE AS HOTE_LOCATION_TYPE,
-    h.PRIMARY_OFFENCE,
     h.HOOD_158 AS HOTE_HOOD_158,
     h.NEIGHBOURHOOD_158 AS HOTE_NEIGHBOURHOOD_158,
     m.REPORT_DATE,
@@ -50,7 +48,6 @@ SELECT
     m.REPORT_MONTH,
     m.REPORT_DAY,
     m.REPORT_DOY,
-    m.MAJOR_CRIME_DIVISION,
     m.MAJOR_CRIME_LOCATION_TYPE,
     m.OFFENCE AS MAJOR_CRIME_OFFENCE,
     m.MAJOR_HOOD_158,
